@@ -3,7 +3,7 @@ import requests
 import uuid
 import os
 
-API_ENDPOINT_CHAT = f"{os.environ['BASE_URL']}/query"
+API_ENDPOINT_CHAT = f"{os.environ['BASE_URL']}/instructai/query"
 
 def chat_bot():
     st.title("InstructAI- Chatbot!")
@@ -41,7 +41,7 @@ def chat_bot():
         with st.chat_message("assistant"):
             payload = {"query": prompt, "session_id": st.session_state.id}
             headers = {
-                    "x-api-key": "5646cf54-c2b3-466e-8185-a55d1a8c921e",
+                    "x-api-key": os.environ["X-API-KEY"],
                     "Content-Type": "application/json",
                 }
             try:

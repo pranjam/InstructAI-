@@ -2,21 +2,20 @@ import streamlit as st
 import requests
 import os
 
-def upload(x_api_key, url):
+def upload(url):
     """
     Uploads a URL to the specified API endpoint.
 
     Args:
-        x_api_key (str): The API key for authentication.
         url (str): The URL to be uploaded.
 
     Returns:
         dict: A dictionary containing the API response or an error message.
     """
-    API_ENDPOINT_UPLOAD = f"{os.environ['BASE_URL']}/url"  # Replace with your actual endpoint
+    API_ENDPOINT_UPLOAD = f"{os.environ['BASE_URL']}/ingestion/url"  # Replace with your actual endpoint
 
     headers = {
-        "x-api-key": "5646cf54-c2b3-466e-8185-a55d1a8c921e",
+        "x-api-key": os.environ["X-API-KEY"],
         "Content-Type": "application/json",
     }
 
@@ -36,10 +35,10 @@ def upload_page():
     url = st.text_input("Enter the URL to upload")
     
     if st.button("Upload URL"):
-        if not x_api_key or not url:
-            st.error("Please provide both the API key and URL.")
+        if not url:
+            st.error("Please provide URL.")
         else:
-            response = upload(x_api_key, url)
+            response = upload(url)
             st.write("API Response:")
             st.json(response)
 
