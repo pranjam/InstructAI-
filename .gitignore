@@ -1,0 +1,8 @@
+#exclude .env file (I am removing this If you need to run jsut add the key which is needed)
+.env
+# Exclude Python bytecode and cache files
+__pycache__/
+*.pyc
+
+# Exclude Faiss index file
+faiss_index_file/
