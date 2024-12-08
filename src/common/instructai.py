@@ -77,7 +77,7 @@ class InstructAIQueryService:
             str: The modified query after processing.
         """
         try:
-            formatted_prompt = QueryPrompt.REFORMATIN_QUERY.value.format(question=query, chat_history=history)
+            formatted_prompt = QueryPrompt.REFORMATTING_QUERY.value.format(question=query, chat_history=history)
             response = self.llm.invoke(formatted_prompt)
             return response.content
         except Exception as e:
