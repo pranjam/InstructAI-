@@ -91,7 +91,7 @@ streamlit run main.py
 ---
 
 ## License
-This project is licensed under a Custom License. You are not allowed to use, modify, or distribute this project without explicit permission from the author. For inquiries, contact [your contact information].
+This project is licensed under a Custom License. You are not allowed to use, modify, or distribute this project without explicit permission from the author. For inquiries, contact pranjam25@gamil.com.
 
 ---
 
